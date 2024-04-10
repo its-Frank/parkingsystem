@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up -Eldoret City Center Parking</title>
+    <link rel="shortcut icon" href="images/3.png" type="image/x-icon" />
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body>
+    <%- include('_header.ejs') %>
+    <main>
+      <section>
+        <h1>Sign Up</h1>
+        <% if(locals.error){%>
+        <p style="color: orangered"><%=locals.errMessage%></p>
+        <form action="/signup" method="post">
+          <div>
+            <label for="fullname">Fullname</label>
+            <input
+              type="text"
+              name="fullname"
+              id="fullname"
+              value="<%=locals.prevInput.fullname%>"
+            />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              value="<%=locals.prevInput.email%>"
+            />
+          </div>
+          <div>
+            <label for="phone">Phone Number</label>
+            <input
+              type="tell"
+              name="phone"
+              id="phone"
+              value="<%=locals.prevInput.phone%>"
+            />
+          </div>
+          <div>
+            <label for="pass">Password</label>
+            <input
+              type="password"
+              name="pass"
+              id="pass"
+              value="<%=locals.prevInput.pass%>"
+            />
+          </div>
+          <div>
+            <label for="confirmPass">Confirm Password</label>
+            <input
+              type="password"
+              name="confirmPass"
+              id="confirmPass"
+              value="<%=locals.prevInput.confirmPass%>"
+            />
+          </div>
+          <div>
+            <input type="submit" value="Sign Up" />
+          </div>
+        </form>
+        <%}else{%>
+        <form action="/signup" method="post">
+          <div>
+            <label for="fullname">Fullname</label>
+            <input type="text" name="fullname" id="fullname" />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" />
+          </div>
+          <div>
+            <label for="phone">Phone Number</label>
+            <input type="tell" name="phone" id="phone" value="+254" />
+          </div>
+          <div>
+            <label for="pass">Password</label>
+            <input type="password" name="pass" id="pass" />
+          </div>
+          <div>
+            <label for="confirmPass">Confirm Password</label>
+            <input type="password" name="confirmPass" id="confirmPass" />
+          </div>
+          <div>
+            <input type="submit" value="Sign Up" />
+          </div>
+        </form>
+        <%}%>
+      </section>
+    </main>
+  </body>
+  <%- include('_footer.ejs') %>
+</html>

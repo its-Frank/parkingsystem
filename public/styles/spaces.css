@@ -1,0 +1,18 @@
+ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+li {
+  width: 20%;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
+li a {
+  background-color: green;
+  color: white;
+  border-radius: 8px;
+}
