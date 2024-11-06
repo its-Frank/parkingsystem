@@ -154,3 +154,36 @@ footer ion-icon {
     justify-content: space-between;
   }
 }
+
+/* about us styles */
+.about-section {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+.video-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+.video-container video {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 8px;
+}
+.video-description {
+  font-size: 16px;
+  color: #555;
+  max-width: 480px;
+}
+@media (min-width: 768px) {
+  .video-container {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+  .video-description {
+    max-width: 300px;
+  }
+}

@@ -3,15 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About -Eldoret City Center Parking</title>
+    <title>About - Eldoret City Center Parking</title>
     <link rel="shortcut icon" href="images/3.png" type="image/x-icon" />
     <link rel="stylesheet" href="styles/index.css" />
   </head>
   <body>
     <%- include('_header.ejs') %>
-    <main>
+    <main class="about-section">
       <h1>About Eldoret City Center Parking</h1>
+      <p>
+        Our mission is to offer sufficient details about the parking systems of
+        vehicles, both heavy and light vehicles, which can be accessed easily.
+      </p>
+
+      <div class="video-container">
+        <video controls>
+          <source src="images/rupamall.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-description">
+          <p>
+            One of the spacious and accessible parking spaces at Rupa Mall.
+            Convenient, secure, and designed for both heavy and light vehicles.
+          </p>
+        </div>
+      </div>
+      <div class="video-container">
+        <video controls>
+          <source src="images/showground.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-description">
+          <p>
+            One of the spacious and accessible parking spaces at Eldoret
+            Showgrounds. Convenient, secure, and designed for both heavy and
+            light vehicles.
+          </p>
+        </div>
+      </div>
     </main>
+    <%- include('_footer.ejs') %>
   </body>
-  <%- include('_footer.ejs') %>
 </html>
