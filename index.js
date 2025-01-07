@@ -50,9 +50,6 @@ app.get("/", (req, res) => {
 app.get("/about", (req, res) => {
   res.render("about.ejs");
 });
-app.get("/contact", (req, res) => {
-  res.render("contact.ejs");
-});
 app.get("/services", (req, res) => {
   res.render("services.ejs");
 });
@@ -305,6 +302,36 @@ app.post("/signin", (req, res) => {
       }
     }
   });
+});
+//contact route
+app.get("/contact", (req, res) => {
+  res.render("contact", { user: req.user || null });
+});
+//contact post
+app.post("/contact", (req, res) => {
+  const { name, email, phone, subject, message, category } = req.body;
+  const query =
+    "INSERT INTO contacts (name, email, phone, subject, message, category) VALUES (?, ?, ?, ?, ?, ?)";
+  connection.query(
+    query,
+    [name, email, phone, subject, message, category],
+    (err, result) => {
+      if (err) {
+        console.error("Error inserting contact:", err);
+        return res.render("contact", {
+          user: req.user || null,
+          error:
+            "There was an error submitting your message. Please try again.",
+        });
+      }
+      // Successful submission
+      res.render("contact", {
+        user: req.user || null,
+        success:
+          "Your message has been sent successfully. We will get in touch with you shortly!",
+      });
+    }
+  );
 });
 
 // 404 route
