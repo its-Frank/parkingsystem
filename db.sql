@@ -8,6 +8,16 @@ CREATE TABLE spaces( space_id INT AUTO_INCREMENT,space_label VARCHAR(10), space_
 
 CREATE TABLE bookings(booking_id INT AUTO_INCREMENT, user  VARCHAR(100), space INT, payment_method VARCHAR(20), time_in DATETIME DEFAULT CURRENT_TIMESTAMP, time_out DATETIME, booking_status VARCHAR(20), PRIMARY KEY(booking_id) DEFAULT 'checkedin', FOREIGN KEY(user) REFERENCES users(email), FOREIGN KEY (space) REFERENCES spaces(space_id));
 
+CREATE TABLE contacts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone VARCHAR(20),
+    subject VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL,
+    category VARCHAR(50),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
 INSERT INTO users (email, fullname, phone, password) VALUES
   ('john@gmail.com', 'John Doe', '+254722123456', 'hashed_password1'),

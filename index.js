@@ -11,6 +11,9 @@ const conn = mysql.createConnection({
 });
 
 const app = express();
+
+app.set("view engine", "ejs");
+
 app.use(cookieParser());
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true })); // bodyparser -- req.body - with form data
@@ -312,7 +315,7 @@ app.post("/contact", (req, res) => {
   const { name, email, phone, subject, message, category } = req.body;
   const query =
     "INSERT INTO contacts (name, email, phone, subject, message, category) VALUES (?, ?, ?, ?, ?, ?)";
-  connection.query(
+  conn.query(
     query,
     [name, email, phone, subject, message, category],
     (err, result) => {
@@ -333,7 +336,6 @@ app.post("/contact", (req, res) => {
     }
   );
 });
-
 // 404 route
 app.get("*", (req, res) => {
   res.render("404.ejs");

@@ -50,6 +50,9 @@ header button {
 header ion-icon {
   font-size: 45px;
 }
+header nav a {
+  text-decoration: none;
+}
 #main-nav {
   position: fixed;
   top: 70px;

@@ -6,6 +6,12 @@
     <title>Eldoret City Center Parking</title>
     <link rel="shortcut icon" href="images/3.png" type="image/x-icon" />
     <link rel="stylesheet" href="styles/index.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <%- include('_header.ejs') %>
@@ -71,7 +77,129 @@
           </p>
         </div>
       </section>
+
+      <!-- Contact Section -->
+      <section
+        class="contact_section layout_padding py-5"
+        id="contactLink"
+        style="
+          background-color: #05264a;
+          padding-top: 60px !important;
+          margin-top: 30px;
+        "
+      >
+        <div class="container">
+          <% if (locals.success) { %>
+          <div class="alert alert-success text-center mb-4"><%= success %></div>
+          <% } %> <% if (locals.error) { %>
+          <div class="alert alert-danger text-center mb-4"><%= error %></div>
+          <% } %>
+
+          <div class="heading_container text-center mb-4">
+            <h2 class="text-white">Contact Eldoret City Center Car Parking</h2>
+            <p class="text-white-50">
+              We'd love to hear from you. Send us a message and we'll get back
+              to you soon.
+            </p>
+          </div>
+          <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+              <form action="/contact" method="POST">
+                <div class="form-row">
+                  <div class="form-group col-md-6 mb-3">
+                    <label for="inputName4" class="text-white">Full Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputName4"
+                      name="name"
+                      placeholder="Enter your full name"
+                      required
+                    />
+                  </div>
+                  <div class="form-group col-md-6 mb-3">
+                    <label for="inputEmail4" class="text-white"
+                      >Email Address</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="inputEmail4"
+                      name="email"
+                      placeholder="Enter your email"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-group mb-3">
+                  <label for="inputSubject4" class="text-white">Subject</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputSubject4"
+                    name="subject"
+                    placeholder="Enter message subject"
+                    required
+                  />
+                </div>
+                <div class="form-group mb-3">
+                  <label for="inputMessage" class="text-white"
+                    >Your Message</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="inputMessage"
+                    name="message"
+                    placeholder="Write your message here"
+                    rows="5"
+                    required
+                  ></textarea>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <label for="inputPhone" class="text-white"
+                      >Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      class="form-control"
+                      id="inputPhone"
+                      name="phone"
+                      placeholder="Enter your phone number"
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label for="inputCategory" class="text-white"
+                      >Inquiry Type</label
+                    >
+                    <select
+                      class="form-control"
+                      id="inputCategory"
+                      name="category"
+                    >
+                      <option>General Inquiry</option>
+                      <option>Support</option>
+                      <option>Parking Help</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                  <button type="submit" class="btn btn-primary btn-lg">
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
   </body>
   <%- include('_footer.ejs') %>
 </html>
